@@ -1,0 +1,173 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #1a1a1a, #000);
+  color: #0ff;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+/* Tracker Container */
+.tracker {
+  width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #111;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  position: relative;
+}
+
+/* Screen Styling */
+.screen {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff0;
+  text-shadow: 0 0 5px #ff0;
+}
+
+.screen h1 {
+  font-size: 1.6em;
+}
+
+.balance {
+  font-size: 1.4em;
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: 0 0 8px #0ff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+/* Progress Bar */
+.progress-container {
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0ff, #0a0);
+  width: 100%;
+  transition: width 0.3s ease;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { filter: brightness(1.2); }
+  100% { filter: brightness(0.8); }
+}
+
+/* Neon Flicker Effect */
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Entry Section */
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.entry input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #0ff;
+  background: #111;
+  color: #0ff;
+  font-size: 1em;
+  text-shadow: 0 0 4px #0ff;
+}
+
+.entry button {
+  background: #333;
+  color: #0ff;
+  font-size: 1em;
+  padding: 10px;
+  border: 2px solid #ff0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-shadow: 0 0 4px #ff0;
+}
+
+.entry button:hover {
+  background: #444;
+  box-shadow: 0 0 8px #ff0, 0 0 12px #ff0;
+}
+
+.entry button:active {
+  transform: scale(0.95);
+}
+
+/* History Section */
+.history {
+  margin-top: 10px;
+}
+
+.history h2 {
+  font-size: 1.2em;
+  color: #ff0;
+  text-shadow: 0 0 5px #ff0;
+}
+
+/* Transaction List */
+#transaction-list {
+  list-style-type: none;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+}
+
+#transaction-list li {
+  background: #111;
+  padding: 10px;
+  border-left: 5px solid;
+  color: #0ff;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  animation: slideIn 0.5s ease-out;
+  text-shadow: 0 0 4px #0ff;
+}
+
+#transaction-list .income {
+  border-color: #0f0;
+}
+
+#transaction-list .expense {
+  border-color: #f00;
+}
+
+/* Slide-in effect for transactions */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Unique Rupee Symbol Style */
+.rupee-symbol {
+  font-size: 1.2em;
+  color: #ff0;
+  margin-right: 5px;
+  text-shadow: 0 0 5px #ff0;
+  vertical-align: middle;
+}
